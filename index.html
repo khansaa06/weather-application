@@ -1,86 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Calculator</title>
 
     <link rel="stylesheet" href="style.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
-    <div class="container">
+<div class="calculator">
 
-        <div class="weather-card">
+    <input type="text" id="display" readonly>
 
-            <h1>🌤 Weather App</h1>
+    <div class="buttons">
 
-            <div class="search-box">
-                <input type="text" id="city" placeholder="Enter City Name">
+        <button onclick="clearDisplay()" class="operator">C</button>
+        <button onclick="deleteLast()" class="operator">⌫</button>
+        <button onclick="appendValue('%')" class="operator">%</button>
+        <button onclick="appendValue('/')" class="operator">÷</button>
 
-                <button id="searchBtn">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('*')" class="operator">×</button>
 
-            <div id="weather" class="weather-info">
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="appendValue('-')" class="operator">−</button>
 
-                <h2 id="cityName"></h2>
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('+')" class="operator">+</button>
 
-                <img id="icon" src="" alt="Weather Icon">
-
-                <h1 id="temperature"></h1>
-
-                <h3 id="condition"></h3>
-
-                <div class="details">
-
-                    <div class="detail-box">
-                        <i class="fas fa-temperature-half"></i>
-                        <p>Feels Like</p>
-                        <span id="feelsLike"></span>
-                    </div>
-
-                    <div class="detail-box">
-                        <i class="fas fa-droplet"></i>
-                        <p>Humidity</p>
-                        <span id="humidity"></span>
-                    </div>
-
-                    <div class="detail-box">
-                        <i class="fas fa-wind"></i>
-                        <p>Wind</p>
-                        <span id="wind"></span>
-                    </div>
-
-                    <div class="detail-box">
-                        <i class="fas fa-clock"></i>
-                        <p>Local Time</p>
-                        <span id="time"></span>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <p id="error"></p>
-
-        </div>
+        <button onclick="appendValue('0')" class="zero">0</button>
+        <button onclick="appendValue('.')">.</button>
+        <button onclick="calculate()" class="equal">=</button>
 
     </div>
 
-    <script src="script.js"></script>
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
